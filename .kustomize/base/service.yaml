@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: container-service
+spec:
+  selector:
+    app: deployment-name-here 
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: deployment-port-here 

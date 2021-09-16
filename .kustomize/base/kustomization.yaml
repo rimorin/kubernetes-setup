@@ -1,0 +1,5 @@
+commonLabels:
+  app: any_name_here 
+resources:
+  - deployment.yaml
+  - service.yaml
