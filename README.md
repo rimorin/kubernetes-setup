@@ -103,3 +103,30 @@ kubectl apply -f nginx.yml
 
 Go GCP sometime to update their network and app should appear
 
+## Kustomize
+
+Used to deploy K8 dynamically to both staging & production
+
+Create the following file structure
+
+> ```
+> ~/.kustomize
+> ├── base
+> │   ├── deployment.yaml
+> │   ├── kustomization.yaml
+> │   └── service.yaml
+> └── overlays
+>     ├── development
+>     │   ├── deployment.yaml
+>     │   ├── kustomization.yaml 
+>     └── production
+>         ├── deployment.yaml
+>         ├── kustomization.yaml
+> ```
+
+Deploy kustomize script according to CI/CD setup.
+
+```shell script
+kubectl kustomize .kustomize/overlays/$ENVIRONMENT  > update.yaml
+kubectl apply -f update.yaml
+```
