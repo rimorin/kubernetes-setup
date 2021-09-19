@@ -101,7 +101,7 @@ To connect service to the ingress, run ingress script
 kubectl apply -f nginx.yml
 ```
 
-Go GCP sometime to update their network and app should appear
+Give GCP sometime to update their network and app should appear
 
 ## Kustomize
 
