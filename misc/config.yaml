@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  CONFIG_VALUES_01: test
+  CONFIG_VALUES_02: 2.0.1
+metadata:
+  name: dev-config
+  namespace: dev

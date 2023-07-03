@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: api
+  name: main-api
+  namespace: dev
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - image: gcr.io/sinuous-ally-322609/test-api:v1
+          imagePullPolicy: IfNotPresent
+          name: web
+          ports:
+            - containerPort: 8080
+              protocol: TCP
